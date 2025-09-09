@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #667eea;
+}
+
+/* Main Content */
+main {
+    margin-top: 80px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.hero-content {
+    flex: 1;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guitar-animation {
+    font-size: 8rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Sections */
+section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Chords Section */
+.chords-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 2rem 5%;
+}
+
+.chord-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.chord-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.chord-card:hover {
+    transform: translateY(-5px);
+}
+
+.chord-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #667eea;
+}
+
+.chord-diagram {
+    margin: 1.5rem 0;
+}
+
+.fretboard {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    margin: 0 auto;
+    max-width: 200px;
+}
+
+.string {
+    background: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #333;
+    border: 2px solid #dee2e6;
+}
+
+.string[data-fret="0"] {
+    background: #e9ecef;
+    color: #6c757d;
+}
+
+.string[data-fret="1"],
+.string[data-fret="2"],
+.string[data-fret="3"] {
+    background: #667eea;
+    color: white;
+}
+
+.play-chord {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.play-chord:hover {
+    background: #218838;
+}
+
+/* Tuner Section */
+.tuner-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 2rem 5%;
+}
+
+.tuner-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.tuner-display {
+    margin-bottom: 2rem;
+}
+
+.note-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.tuner-needle {
+    width: 200px;
+    height: 4px;
+    background: #dee2e6;
+    border-radius: 2px;
+    margin: 0 auto 1rem;
+    position: relative;
+}
+
+.needle {
+    width: 20px;
+    height: 20px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: left 0.3s ease;
+}
+
+.frequency {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.string-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.string-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.string-btn:hover {
+    background: #5a6fd8;
+    transform: scale(1.05);
+}
+
+.string-btn.active {
+    background: #ff6b6b;
+    transform: scale(1.1);
+}
+
+/* Practice Section */
+.practice-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 2rem 5%;
+}
+
+.practice-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.practice-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.practice-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #667eea;
+}
+
+.chord-sequence {
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+}
+
+.chord {
+    background: #667eea;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin: 0 0.5rem;
+    font-weight: 600;
+}
+
+.timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin: 1rem 0;
+}
+
+.start-practice,
+.start-strum {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.start-practice:hover,
+.start-strum:hover {
+    background: #ee5a24;
+}
+
+.strum-pattern {
+    margin: 1.5rem 0;
+}
+
+.pattern-visual {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+    letter-spacing: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 5%;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .guitar-animation {
+        font-size: 5rem;
+        margin-top: 2rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .chord-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .string-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .practice-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .string-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .tuner-container {
+        padding: 2rem 1rem;
+    }
+}
+
