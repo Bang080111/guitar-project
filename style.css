@@ -1429,8 +1429,20 @@ section h2 {
     
     /* 스트럼 패턴 반응형 */
     .time-signature-controls {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: row;
+        gap: 0.1rem;
+        padding: 0.4rem 0.5rem;
+        max-width: 180px;
+    }
+    
+    .time-signature-label {
+        font-size: 0.8rem;
+    }
+    
+    .time-signature-selector select {
+        padding: 0.25rem 0.4rem;
+        font-size: 0.8rem;
+        min-width: 65px;
     }
     
     .pattern-tabs {
@@ -1794,26 +1806,32 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.1rem;
     background: rgba(102, 126, 234, 0.1);
-    padding: 1rem;
+    padding: 0.5rem 0.6rem;
     border-radius: 12px;
     border: 1px solid rgba(102, 126, 234, 0.2);
+    max-width: 200px;
+    margin: 0 auto;
 }
 
 .time-signature-label {
     font-weight: 600;
     color: #667eea;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .time-signature-selector select {
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.4rem;
     border: 1px solid rgba(102, 126, 234, 0.3);
     border-radius: 8px;
     background: white;
     color: #667eea;
     font-weight: 600;
     cursor: pointer;
+    font-size: 0.85rem;
+    min-width: 80px;
 }
 
 .pattern-controls {
