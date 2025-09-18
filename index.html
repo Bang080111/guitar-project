@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기타 마스터 - 쉽게 배우는 기타</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🎸 기타 마스터</div>
+            <ul>
+                <li><a href="#home">홈</a></li>
+                <li><a href="#chords">코드</a></li>
+                <li><a href="#tuner">튜너</a></li>
+                <li><a href="#metronome">메트로놈</a></li>
+                <li><a href="#practice">연습</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>기타를 쉽게 배워보세요!</h1>
+                <p>초보자도 쉽게 따라할 수 있는 기타 학습 사이트입니다</p>
+                <button class="cta-button" onclick="scrollToSection('chords')">시작하기</button>
+            </div>
+            <div class="hero-image">
+                <div class="guitar-animation">🎸</div>
+            </div>
+        </section>
+
+        <section id="chords" class="chords-section">
+            <h2>기본 기타 코드</h2>
+            <div class="chord-grid">
+                <div class="chord-card" data-chord="C">
+                    <h3>C 코드</h3>
+                    <div class="chord-info">
+                        <div class="chord-notes">C - E - G</div>
+                        <div class="chord-type">메이저 코드</div>
+                    </div>
+                    <div class="chord-diagram">
+                        <div class="fretboard">
+                            <div class="fret-numbers">
+                                <span></span>
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                            </div>
+                            <div class="strings-container">
+                                <div class="string-row">
+                                    <span class="string-label">1번줄</span>
+                                    <div class="fret" data-fret="0" data-string="1">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="1">
+                                        <span class="note">F</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="1">
+                                        <span class="note">F#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="1">
+                                        <span class="note">G</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">2번줄</span>
+                                    <div class="fret" data-fret="0" data-string="2">
+                                        <span class="note">B</span>
+                                    </div>
+                                    <div class="fret active" data-fret="1" data-string="2">
+                                        <span class="finger-marker">1</span>
+                                        <span class="note">C</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="2">
+                                        <span class="note">C#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="2">
+                                        <span class="note">D</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">3번줄</span>
+                                    <div class="fret" data-fret="0" data-string="3">
+                                        <span class="note">G</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="3">
+                                        <span class="note">G#</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="3">
+                                        <span class="note">A</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="3">
+                                        <span class="note">A#</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">4번줄</span>
+                                    <div class="fret" data-fret="0" data-string="4">
+                                        <span class="note">D</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="4">
+                                        <span class="note">D#</span>
+                                    </div>
+                                    <div class="fret active" data-fret="2" data-string="4">
+                                        <span class="finger-marker">2</span>
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="4">
+                                        <span class="note">F</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">5번줄</span>
+                                    <div class="fret" data-fret="0" data-string="5">
+                                        <span class="note">A</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="5">
+                                        <span class="note">A#</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="5">
+                                        <span class="note">B</span>
+                                    </div>
+                                    <div class="fret active" data-fret="3" data-string="5">
+                                        <span class="finger-marker">3</span>
+                                        <span class="note">C</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">6번줄</span>
+                                    <div class="fret" data-fret="0" data-string="6">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="6">
+                                        <span class="note">F</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="6">
+                                        <span class="note">F#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="6">
+                                        <span class="note">G</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="finger-positions">
+                            <div class="finger-info">
+                                <span class="finger">1</span> <span class="position">2번줄 1프렛</span>
+                            </div>
+                            <div class="finger-info">
+                                <span class="finger">2</span> <span class="position">4번줄 2프렛</span>
+                            </div>
+                            <div class="finger-info">
+                                <span class="finger">3</span> <span class="position">5번줄 3프렛</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="play-chord" onclick="playChord('C')">재생</button>
+                        <button class="zoom-chord" onclick="zoomChord('C')">확대</button>
+                    </div>
+                </div>
+
+                <div class="chord-card" data-chord="G">
+                    <h3>G 코드</h3>
+                    <div class="chord-info">
+                        <div class="chord-notes">G - B - D</div>
+                        <div class="chord-type">메이저 코드</div>
+                    </div>
+                    <div class="chord-diagram">
+                        <div class="fretboard">
+                            <div class="fret-numbers">
+                                <span></span>
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                            </div>
+                            <div class="strings-container">
+                                <div class="string-row">
+                                    <span class="string-label">1번줄</span>
+                                    <div class="fret" data-fret="0" data-string="1">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="1">
+                                        <span class="note">F</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="1">
+                                        <span class="note">F#</span>
+                                    </div>
+                                    <div class="fret active" data-fret="3" data-string="1">
+                                        <span class="finger-marker">4</span>
+                                        <span class="note">G</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">2번줄</span>
+                                    <div class="fret" data-fret="0" data-string="2">
+                                        <span class="note">B</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="2">
+                                        <span class="note">C</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="2">
+                                        <span class="note">C#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="2">
+                                        <span class="note">D</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">3번줄</span>
+                                    <div class="fret" data-fret="0" data-string="3">
+                                        <span class="note">G</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="3">
+                                        <span class="note">G#</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="3">
+                                        <span class="note">A</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="3">
+                                        <span class="note">A#</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">4번줄</span>
+                                    <div class="fret" data-fret="0" data-string="4">
+                                        <span class="note">D</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="4">
+                                        <span class="note">D#</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="4">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="4">
+                                        <span class="note">F</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">5번줄</span>
+                                    <div class="fret" data-fret="0" data-string="5">
+                                        <span class="note">A</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="5">
+                                        <span class="note">A#</span>
+                                    </div>
+                                    <div class="fret active" data-fret="2" data-string="5">
+                                        <span class="finger-marker">2</span>
+                                        <span class="note">B</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="5">
+                                        <span class="note">C</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">6번줄</span>
+                                    <div class="fret" data-fret="0" data-string="6">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="6">
+                                        <span class="note">F</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="6">
+                                        <span class="note">F#</span>
+                                    </div>
+                                    <div class="fret active" data-fret="3" data-string="6">
+                                        <span class="finger-marker">3</span>
+                                        <span class="note">G</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="finger-positions">
+                            <div class="finger-info">
+                                <span class="finger">2</span> <span class="position">5번줄 2프렛</span>
+                            </div>
+                            <div class="finger-info">
+                                <span class="finger">3</span> <span class="position">6번줄 3프렛</span>
+                            </div>
+                            <div class="finger-info">
+                                <span class="finger">4</span> <span class="position">1번줄 3프렛</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chord-actions">
+                    <button class="play-chord" onclick="playChord('G')">재생</button>
+                        <button class="zoom-chord" onclick="zoomChord('G')">확대</button>
+                    </div>
+                </div>
+
+                <div class="chord-card" data-chord="Am">
+                    <h3>Am 코드</h3>
+                    <div class="chord-info">
+                        <div class="chord-notes">A - C - E</div>
+                        <div class="chord-type">마이너 코드</div>
+                    </div>
+                    <div class="chord-diagram">
+                        <div class="fretboard">
+                            <div class="fret-numbers">
+                                <span></span>
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                            </div>
+                            <div class="strings-container">
+                                <div class="string-row">
+                                    <span class="string-label">1번줄</span>
+                                    <div class="fret" data-fret="0" data-string="1">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="1">
+                                        <span class="note">F</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="1">
+                                        <span class="note">F#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="1">
+                                        <span class="note">G</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">2번줄</span>
+                                    <div class="fret" data-fret="0" data-string="2">
+                                        <span class="note">B</span>
+                                    </div>
+                                    <div class="fret active" data-fret="1" data-string="2">
+                                        <span class="finger-marker">1</span>
+                                        <span class="note">C</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="2">
+                                        <span class="note">C#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="2">
+                                        <span class="note">D</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">3번줄</span>
+                                    <div class="fret" data-fret="0" data-string="3">
+                                        <span class="note">G</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="3">
+                                        <span class="note">G#</span>
+                                    </div>
+                                    <div class="fret active" data-fret="2" data-string="3">
+                                        <span class="finger-marker">2</span>
+                                        <span class="note">A</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="3">
+                                        <span class="note">A#</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">4번줄</span>
+                                    <div class="fret" data-fret="0" data-string="4">
+                                        <span class="note">D</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="4">
+                                        <span class="note">D#</span>
+                                    </div>
+                                    <div class="fret active" data-fret="2" data-string="4">
+                                        <span class="finger-marker">3</span>
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="4">
+                                        <span class="note">F</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">5번줄</span>
+                                    <div class="fret" data-fret="0" data-string="5">
+                                        <span class="note">A</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="5">
+                                        <span class="note">A#</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="5">
+                                        <span class="note">B</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="5">
+                                        <span class="note">C</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">6번줄</span>
+                                    <div class="fret" data-fret="0" data-string="6">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="6">
+                                        <span class="note">F</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="6">
+                                        <span class="note">F#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="6">
+                                        <span class="note">G</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="finger-positions">
+                            <div class="finger-info">
+                                <span class="finger">1</span> <span class="position">2번줄 1프렛</span>
+                            </div>
+                            <div class="finger-info">
+                                <span class="finger">2</span> <span class="position">3번줄 2프렛</span>
+                            </div>
+                            <div class="finger-info">
+                                <span class="finger">3</span> <span class="position">4번줄 2프렛</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chord-actions">
+                    <button class="play-chord" onclick="playChord('Am')">재생</button>
+                        <button class="zoom-chord" onclick="zoomChord('Am')">확대</button>
+                    </div>
+                </div>
+
+                <div class="chord-card" data-chord="F">
+                    <h3>F 코드</h3>
+                    <div class="chord-info">
+                        <div class="chord-notes">F - A - C</div>
+                        <div class="chord-type">메이저 코드</div>
+                    </div>
+                    <div class="chord-diagram">
+                        <div class="fretboard">
+                            <div class="fret-numbers">
+                                <span></span>
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                            </div>
+                            <div class="strings-container">
+                                <div class="string-row">
+                                    <span class="string-label">1번줄</span>
+                                    <div class="fret" data-fret="0" data-string="1">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret active" data-fret="1" data-string="1">
+                                        <span class="finger-marker">1</span>
+                                        <span class="note">F</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="1">
+                                        <span class="note">F#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="1">
+                                        <span class="note">G</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">2번줄</span>
+                                    <div class="fret" data-fret="0" data-string="2">
+                                        <span class="note">B</span>
+                                    </div>
+                                    <div class="fret active" data-fret="1" data-string="2">
+                                        <span class="finger-marker">1</span>
+                                        <span class="note">C</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="2">
+                                        <span class="note">C#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="2">
+                                        <span class="note">D</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">3번줄</span>
+                                    <div class="fret" data-fret="0" data-string="3">
+                                        <span class="note">G</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="3">
+                                        <span class="note">G#</span>
+                                    </div>
+                                    <div class="fret active" data-fret="2" data-string="3">
+                                        <span class="finger-marker">2</span>
+                                        <span class="note">A</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="3">
+                                        <span class="note">A#</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">4번줄</span>
+                                    <div class="fret" data-fret="0" data-string="4">
+                                        <span class="note">D</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="4">
+                                        <span class="note">D#</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="4">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret active" data-fret="3" data-string="4">
+                                        <span class="finger-marker">3</span>
+                                        <span class="note">F</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">5번줄</span>
+                                    <div class="fret" data-fret="0" data-string="5">
+                                        <span class="note">A</span>
+                                    </div>
+                                    <div class="fret" data-fret="1" data-string="5">
+                                        <span class="note">A#</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="5">
+                                        <span class="note">B</span>
+                                    </div>
+                                    <div class="fret active" data-fret="3" data-string="5">
+                                        <span class="finger-marker">4</span>
+                                        <span class="note">C</span>
+                                    </div>
+                                </div>
+                                <div class="string-row">
+                                    <span class="string-label">6번줄</span>
+                                    <div class="fret" data-fret="0" data-string="6">
+                                        <span class="note">E</span>
+                                    </div>
+                                    <div class="fret active" data-fret="1" data-string="6">
+                                        <span class="finger-marker">1</span>
+                                        <span class="note">F</span>
+                                    </div>
+                                    <div class="fret" data-fret="2" data-string="6">
+                                        <span class="note">F#</span>
+                                    </div>
+                                    <div class="fret" data-fret="3" data-string="6">
+                                        <span class="note">G</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="finger-positions">
+                            <div class="finger-info">
+                                <span class="finger">1</span> <span class="position">1,2,6번줄 1프렛</span>
+                            </div>
+                            <div class="finger-info">
+                                <span class="finger">2</span> <span class="position">3번줄 2프렛</span>
+                            </div>
+                            <div class="finger-info">
+                                <span class="finger">3</span> <span class="position">4번줄 3프렛</span>
+                            </div>
+                            <div class="finger-info">
+                                <span class="finger">4</span> <span class="position">5번줄 3프렛</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chord-actions">
+                    <button class="play-chord" onclick="playChord('F')">재생</button>
+                        <button class="zoom-chord" onclick="zoomChord('F')">확대</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tuner" class="tuner-section">
+            <h2>기타 튜너</h2>
+            <div class="tuner-container">
+                <div class="tuner-display">
+                    <div class="note-display">E</div>
+                    <div class="tuner-needle">
+                        <div class="needle"></div>
+                    </div>
+                    <div class="frequency">440 Hz</div>
+                </div>
+                <div class="string-buttons">
+                    <button class="string-btn" data-note="E" data-frequency="82.41">6번줄 (E)</button>
+                    <button class="string-btn" data-note="A" data-frequency="110.00">5번줄 (A)</button>
+                    <button class="string-btn" data-note="D" data-frequency="146.83">4번줄 (D)</button>
+                    <button class="string-btn" data-note="G" data-frequency="196.00">3번줄 (G)</button>
+                    <button class="string-btn" data-note="B" data-frequency="246.94">2번줄 (B)</button>
+                    <button class="string-btn" data-note="E" data-frequency="329.63">1번줄 (E)</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="metronome" class="metronome-section">
+            <h2>메트로놈</h2>
+            <div class="metronome-container">
+                <div class="metronome-card">
+                    <div class="metronome-display">
+                        <div class="tempo-display">
+                            <div class="tempo-value" id="tempoValue">120</div>
+                            <div class="tempo-label">BPM</div>
+                        </div>
+                        <div class="beat-indicator" id="beatIndicator">
+                            <div class="beat-dot active" data-beat="1">1</div>
+                            <div class="beat-dot" data-beat="2">2</div>
+                            <div class="beat-dot" data-beat="3">3</div>
+                            <div class="beat-dot" data-beat="4">4</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tempo-controls">
+                        <div class="tempo-slider-container">
+                            <input type="range" id="tempoSlider" min="40" max="200" value="120" 
+                                   oninput="updateTempoFromSlider(this.value)">
+                            <div class="tempo-labels">
+                                <span>40</span>
+                                <span>120</span>
+                                <span>200</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tempo-buttons">
+                            <button class="tempo-btn" onclick="tapTempo()">템포 맞추기</button>
+                            <button class="tempo-btn" onclick="decreaseTempo()">-</button>
+                            <button class="tempo-btn" onclick="increaseTempo()">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="time-signature-controls-metronome">
+                        <div class="time-sig-label">박자 설정:</div>
+                        <div class="time-sig-selector">
+                            <select id="metronomeTimeSignature" onchange="changeMetronomeTimeSignature()">
+                                <option value="4/4">4/4</option>
+                                <option value="3/4">3/4</option>
+                                <option value="2/4">2/4</option>
+                                <option value="6/8">6/8</option>
+                                <option value="12/8">12/8</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="metronome-options">
+                        <div class="option-group">
+                            <label class="option-label">
+                                <input type="checkbox" id="metronomeSound" checked>
+                                소리 켜기
+                            </label>
+                        </div>
+                        <div class="option-group">
+                            <label class="option-label">
+                                <input type="checkbox" id="metronomeVisual">
+                                시각적 표시
+                            </label>
+                        </div>
+                        <div class="option-group">
+                            <label class="option-label">
+                                <input type="checkbox" id="metronomeAccent">
+                                강세 표시
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="metronome-controls">
+                        <button class="metronome-btn start" id="metronomeStartBtn" onclick="toggleMetronome()">
+                            메트로놈 시작
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="practice" class="practice-section">
+            <h2>연습 모드</h2>
+            <div class="practice-container">
+                <div class="practice-card">
+                    <h3>코드 변환 연습</h3>
+                    <div class="chord-sequence">
+                        <span class="chord">C</span> → <span class="chord">G</span> → <span class="chord">Am</span> → <span class="chord">F</span>
+                    </div>
+                    <div class="timer">00:00</div>
+                    <button class="start-practice">연습 시작</button>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>스트럼 패턴</h3>
+                    
+                    <!-- 박자 설정 -->
+                    <div class="time-signature-controls">
+                        <div class="time-signature-label">박자 설정:</div>
+                        <div class="time-signature-selector">
+                            <select id="timeSignature" onchange="changeTimeSignature()">
+                                <option value="4/4">4/4 박자</option>
+                                <option value="3/4">3/4 박자</option>
+                                <option value="2/4">2/4 박자</option>
+                                <option value="6/8">6/8 박자</option>
+                                <option value="12/8">12/8 박자</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 패턴 선택/생성 -->
+                    <div class="pattern-controls">
+                        <div class="pattern-tabs">
+                            <button class="pattern-tab active" onclick="switchPatternTab('preset')">기본 패턴</button>
+                            <button class="pattern-tab" onclick="switchPatternTab('custom')">커스텀 패턴</button>
+                        </div>
+                        
+                        <!-- 기본 패턴 -->
+                        <div id="preset-patterns" class="pattern-section active">
+                            <div class="pattern-selector">
+                                <select id="presetPatternSelect" onchange="loadPresetPattern()">
+                                    <option value="calypso">칼립소 리듬</option>
+                                    <option value="basic">기본 다운스트럼</option>
+                                    <option value="folk">포크 스타일</option>
+                                    <option value="reggae">레게 스타일</option>
+                                    <option value="waltz">왈츠 스타일</option>
+                                </select>
+                            </div>
+                            <div class="strum-pattern">
+                                <div class="pattern-visual" id="patternVisual">↓ ○ ↓ ↑ ○ ↑ ↓ ↑</div>
+                                <div class="rhythm-info" id="rhythmInfo">칼립소 리듬 (○ = 쉼)</div>
+                            </div>
+                        </div>
+
+                        <!-- 커스텀 패턴 -->
+                        <div id="custom-patterns" class="pattern-section">
+                            <div class="pattern-editor">
+                                <div class="editor-instructions">
+                                    <p>원하는 스트럼 패턴을 클릭하여 생성하세요:</p>
+                                    <div class="pattern-legend">
+                                        <span class="legend-item">↓ 다운스트럼</span>
+                                        <span class="legend-item">↑ 업스트럼</span>
+                                        <span class="legend-item">○ 쉼</span>
+                                        <span class="legend-item">● 강세</span>
+                                    </div>
+                                </div>
+                                <div class="pattern-grid" id="patternGrid">
+                                    <!-- 동적으로 생성됨 -->
+                                </div>
+                                <div class="pattern-actions">
+                                    <button class="pattern-btn" onclick="clearCustomPattern()">초기화</button>
+                                    <button class="pattern-btn" onclick="saveCustomPattern()">저장</button>
+                                    <button class="pattern-btn" onclick="loadCustomPattern()">불러오기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 통합된 메트로놈 컨트롤 -->
+                    <div class="integrated-metronome-controls">
+                        <div class="metronome-display-mini">
+                        <div class="tempo-display-mini">
+                            <div class="tempo-value-mini" id="strumTempoValue">120</div>
+                            <div class="tempo-label-mini">BPM</div>
+                            <div class="actual-bpm-display" id="actualBpmDisplay">실제: 60 BPM</div>
+                        </div>
+                            <div class="beat-indicator-mini" id="strumBeatIndicator">
+                                <div class="beat-dot-mini active" data-beat="1">1</div>
+                                <div class="beat-dot-mini" data-beat="2">2</div>
+                                <div class="beat-dot-mini" data-beat="3">3</div>
+                                <div class="beat-dot-mini" data-beat="4">4</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tempo-controls-mini">
+                            <div class="tempo-slider-container-mini">
+                                <input type="range" id="strumTempoSlider" min="40" max="200" value="120" 
+                                       oninput="updateStrumTempoFromSlider(this.value)">
+                                <div class="tempo-labels-mini">
+                                    <span>40</span>
+                                    <span>120</span>
+                                    <span>200</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tempo-buttons-mini">
+                                <button class="tempo-btn-mini" onclick="tapStrumTempo()">템포 탭</button>
+                                <button class="tempo-btn-mini" onclick="decreaseStrumTempo()">-</button>
+                                <button class="tempo-btn-mini" onclick="increaseStrumTempo()">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="metronome-options-mini">
+                            <div class="option-group-mini">
+                                <label class="option-label-mini">
+                                    <input type="checkbox" id="strumMetronomeSound" checked>
+                                    메트로놈 소리
+                                </label>
+                            </div>
+                            <div class="option-group-mini">
+                                <label class="option-label-mini">
+                                    <input type="checkbox" id="strumMetronomeVisual">
+                                    시각적 표시
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="strum-controls">
+                        <button class="start-strum" id="strumStartBtn">스트럼 시작</button>
+                        <div class="strum-status" id="strumStatus">준비</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 기타 마스터. 모든 권리 보유.</p>
+    </footer>
+
+    <!-- 코드 확대 모달 -->
+    <div id="chordModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalChordContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
