@@ -619,31 +619,126 @@
                     <p class="card-description">다양한 리듬 패턴을 연습해보세요</p>
                 </div>
                 <div class="practice-content">
-                    <div class="pattern-section">
-                        <div class="pattern-display">
-                            <div class="pattern-visual">↓ ○ ↓ ↑ ○ ↑ ↓ ↑</div>
-                            <div class="rhythm-info">칼립소 리듬 (○ = 쉼)</div>
+                    <!-- 박자 설정 -->
+                    <div class="time-signature-section">
+                        <div class="time-signature-header">
+                            <h4>박자 설정</h4>
+                        </div>
+                        <div class="time-signature-controls">
+                            <div class="time-signature-label">박자:</div>
+                            <div class="time-signature-selector">
+                                <select id="timeSignature" onchange="changeTimeSignature()">
+                                    <option value="4/4">4/4 박자</option>
+                                    <option value="3/4">3/4 박자</option>
+                                    <option value="2/4">2/4 박자</option>
+                                    <option value="6/8">6/8 박자</option>
+                                    <option value="12/8">12/8 박자</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="tempo-section">
-                        <div class="tempo-header">
-                            <h4>템포 설정</h4>
+
+                    <!-- 패턴 선택/생성 -->
+                    <div class="pattern-controls">
+                        <div class="pattern-tabs">
+                            <button class="pattern-tab active" onclick="switchPatternTab('preset')">기본 패턴</button>
+                            <button class="pattern-tab" onclick="switchPatternTab('custom')">커스텀 패턴</button>
                         </div>
-                        <div class="bpm-controls">
-                            <div class="bpm-display">
-                                <span class="bpm-label">BPM:</span>
-                                <span class="bpm-value">120</span>
+                        
+                        <!-- 기본 패턴 -->
+                        <div id="preset-patterns" class="pattern-section active">
+                            <div class="pattern-selector">
+                                <select id="presetPatternSelect" onchange="loadPresetPattern()">
+                                    <option value="calypso">칼립소 리듬</option>
+                                    <option value="basic">기본 다운스트럼</option>
+                                    <option value="folk">포크 스타일</option>
+                                    <option value="reggae">레게 스타일</option>
+                                    <option value="waltz">왈츠 스타일</option>
+                                </select>
                             </div>
-                            <div class="bpm-buttons">
-                                <button class="bpm-btn decrease" onclick="decreaseBPM()">-</button>
-                                <button class="bpm-btn increase" onclick="increaseBPM()">+</button>
+                            <div class="pattern-display">
+                                <div class="pattern-visual" id="patternVisual">↓ ○ ↓ ↑ ○ ↑ ↓ ↑</div>
+                                <div class="rhythm-info" id="rhythmInfo">칼립소 리듬 (○ = 쉼)</div>
+                            </div>
+                        </div>
+
+                        <!-- 커스텀 패턴 -->
+                        <div id="custom-patterns" class="pattern-section">
+                            <div class="pattern-editor">
+                                <div class="editor-instructions">
+                                    <p>원하는 스트럼 패턴을 클릭하여 생성하세요:</p>
+                                    <div class="pattern-legend">
+                                        <span class="legend-item">↓ 다운스트럼</span>
+                                        <span class="legend-item">↑ 업스트럼</span>
+                                        <span class="legend-item">○ 쉼</span>
+                                        <span class="legend-item">● 강세</span>
+                                    </div>
+                                </div>
+                                <div class="pattern-grid" id="patternGrid">
+                                    <!-- 동적으로 생성됨 -->
+                                </div>
+                                <div class="pattern-actions">
+                                    <button class="pattern-btn" onclick="clearCustomPattern()">초기화</button>
+                                    <button class="pattern-btn" onclick="saveCustomPattern()">저장</button>
+                                    <button class="pattern-btn" onclick="loadCustomPattern()">불러오기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 통합된 메트로놈 컨트롤 -->
+                    <div class="integrated-metronome-controls">
+                        <div class="metronome-display-mini">
+                            <div class="tempo-display-mini">
+                                <div class="tempo-value-mini" id="strumTempoValue">120</div>
+                                <div class="tempo-label-mini">BPM</div>
+                                <div class="actual-bpm-display" id="actualBpmDisplay">실제: 60 BPM</div>
+                            </div>
+                            <div class="beat-indicator-mini" id="strumBeatIndicator">
+                                <div class="beat-dot-mini active" data-beat="1">1</div>
+                                <div class="beat-dot-mini" data-beat="2">2</div>
+                                <div class="beat-dot-mini" data-beat="3">3</div>
+                                <div class="beat-dot-mini" data-beat="4">4</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tempo-controls-mini">
+                            <div class="tempo-slider-container-mini">
+                                <input type="range" id="strumTempoSlider" min="40" max="200" value="120" 
+                                       oninput="updateStrumTempoFromSlider(this.value)">
+                                <div class="tempo-labels-mini">
+                                    <span>40</span>
+                                    <span>120</span>
+                                    <span>200</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tempo-buttons-mini">
+                                <button class="tempo-btn-mini" onclick="tapStrumTempo()">템포 탭</button>
+                                <button class="tempo-btn-mini" onclick="decreaseStrumTempo()">-</button>
+                                <button class="tempo-btn-mini" onclick="increaseStrumTempo()">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="metronome-options-mini">
+                            <div class="option-group-mini">
+                                <label class="option-label-mini">
+                                    <input type="checkbox" id="strumMetronomeSound" checked>
+                                    메트로놈 소리
+                                </label>
+                            </div>
+                            <div class="option-group-mini">
+                                <label class="option-label-mini">
+                                    <input type="checkbox" id="strumMetronomeVisual">
+                                    시각적 표시
+                                </label>
                             </div>
                         </div>
                     </div>
                     
                     <div class="strum-controls">
-                        <button class="start-strum">스트럼 시작</button>
+                        <button class="start-strum" id="strumStartBtn">스트럼 시작</button>
+                        <div class="strum-status" id="strumStatus">준비</div>
                     </div>
                 </div>
             </div>

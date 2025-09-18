@@ -1083,9 +1083,209 @@ section h2 {
     border-color: rgba(255, 107, 107, 0.2);
 }
 
+/* 통합된 메트로놈 컨트롤 */
+.integrated-metronome-controls {
+    margin: 2rem 0;
+    background: rgba(102, 126, 234, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.metronome-display-mini {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.tempo-display-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tempo-value-mini {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #667eea;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tempo-label-mini {
+    font-size: 1rem;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.actual-bpm-display {
+    font-size: 0.8rem;
+    color: #ff6b6b;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.beat-indicator-mini {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.beat-dot-mini {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.2);
+    color: #667eea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.beat-dot-mini.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: #667eea;
+    transform: scale(1.1);
+}
+
+.beat-dot-mini.accent {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.tempo-controls-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.tempo-slider-container-mini {
+    width: 100%;
+    max-width: 300px;
+}
+
+.tempo-slider-container-mini input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(102, 126, 234, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.tempo-slider-container-mini input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+
+.tempo-labels-mini {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.tempo-buttons-mini {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.tempo-btn-mini {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.tempo-btn-mini:nth-child(1) {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.tempo-btn-mini:nth-child(2), .tempo-btn-mini:nth-child(3) {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 3rem;
+}
+
+.tempo-btn-mini:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.metronome-options-mini {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.option-group-mini {
+    display: flex;
+    align-items: center;
+}
+
+.option-label-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #667eea;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.option-label-mini input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: #667eea;
+}
+
 .strum-controls {
     text-align: center;
     margin-top: 2rem;
+}
+
+.strum-status {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 20px;
+    color: #667eea;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.strum-status.active {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
 }
 
 .start-strum {
@@ -1225,6 +1425,75 @@ section h2 {
     
     .tempo-header h4 {
         font-size: 1rem;
+    }
+    
+    /* 스트럼 패턴 반응형 */
+    .time-signature-controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .pattern-tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .pattern-tab {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .pattern-grid {
+        gap: 0.3rem;
+    }
+    
+    .pattern-beat {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+    
+    .pattern-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .pattern-btn {
+        width: 100%;
+        max-width: 150px;
+    }
+    
+    .integrated-metronome-controls {
+        padding: 1rem;
+    }
+    
+    .tempo-controls-mini {
+        gap: 0.8rem;
+    }
+    
+    .tempo-buttons-mini {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .tempo-btn-mini {
+        width: 100%;
+        max-width: 120px;
+    }
+    
+    .metronome-options-mini {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .beat-indicator-mini {
+        gap: 0.3rem;
+    }
+    
+    .beat-dot-mini {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -1505,9 +1774,105 @@ footer {
 }
 
 /* 스트럼 패턴 연습 스타일 */
-.strum-practice .pattern-section {
+.time-signature-section {
     margin: 2rem 0;
     text-align: center;
+}
+
+.time-signature-header {
+    margin-bottom: 1rem;
+}
+
+.time-signature-header h4 {
+    font-size: 1.1rem;
+    color: #667eea;
+    font-weight: 600;
+    margin: 0;
+}
+
+.time-signature-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.time-signature-label {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.time-signature-selector select {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 8px;
+    background: white;
+    color: #667eea;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pattern-controls {
+    margin: 2rem 0;
+}
+
+.pattern-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pattern-tab {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pattern-tab.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.pattern-tab:hover {
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.pattern-tab.active:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.pattern-section {
+    display: none;
+}
+
+.pattern-section.active {
+    display: block;
+}
+
+.pattern-selector {
+    margin-bottom: 1.5rem;
+}
+
+.pattern-selector select {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 12px;
+    background: white;
+    color: #667eea;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .pattern-display {
@@ -1515,22 +1880,129 @@ footer {
     padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid rgba(102, 126, 234, 0.2);
-}
-
-.tempo-section {
-    margin: 2rem 0;
-}
-
-.tempo-header {
     text-align: center;
+}
+
+.pattern-editor {
+    background: rgba(102, 126, 234, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.editor-instructions {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.editor-instructions p {
+    color: #667eea;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
-.tempo-header h4 {
-    font-size: 1.1rem;
+.pattern-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
     color: #667eea;
     font-weight: 600;
-    margin: 0;
+}
+
+.pattern-grid {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pattern-beat {
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.pattern-beat:hover {
+    border-color: #667eea;
+    transform: scale(1.05);
+}
+
+.pattern-beat.rest {
+    background: #f8f9fa;
+    color: #6c757d;
+}
+
+.pattern-beat.down-strum {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: #667eea;
+}
+
+.pattern-beat.up-strum {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.pattern-beat.accent {
+    background: linear-gradient(135deg, #ffd93d, #ff6b6b);
+    color: white;
+    border-color: #ffd93d;
+    transform: scale(1.1);
+}
+
+.pattern-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.pattern-btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pattern-btn:nth-child(1) {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+}
+
+.pattern-btn:nth-child(2) {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.pattern-btn:nth-child(3) {
+    background: linear-gradient(135deg, #17a2b8, #007bff);
+    color: white;
+}
+
+.pattern-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* BPM Controls */
