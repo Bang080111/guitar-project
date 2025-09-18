@@ -10,6 +10,9 @@ body {
     color: #333;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Header */
@@ -127,6 +130,10 @@ section {
     padding: 5rem 5%;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section h2 {
@@ -149,6 +156,9 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .chord-card {
@@ -778,6 +788,9 @@ section h2 {
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .tuner-display {
@@ -1081,6 +1094,9 @@ section h2 {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    display: block;
+    margin: 2rem auto;
+    max-width: 200px;
 }
 
 .start-strum:hover {
@@ -1158,6 +1174,9 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .practice-card {
@@ -1221,6 +1240,8 @@ section h2 {
     font-weight: bold;
     color: #667eea;
     letter-spacing: 0.5rem;
+    text-align: center;
+    margin: 1rem 0;
 }
 
 /* Footer */
@@ -1326,13 +1347,16 @@ footer {
 /* BPM Controls */
 .bpm-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin: 1.5rem 0;
+    gap: 2rem;
+    margin: 1.5rem auto;
     padding: 1rem;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    max-width: 500px;
+    width: 100%;
 }
 
 .bpm-display {
